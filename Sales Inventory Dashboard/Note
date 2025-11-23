@@ -1,0 +1,11 @@
+Bash command: Sanity-check the schema really has on_hand
+sqlite3 "backend/inventory.db" ".schema items"
+
+Bash command: Check schema table details
+python3 - <<'PY'
+import sqlite3, pathlib
+db = pathlib.Path("backend/inventory.db")
+con = sqlite3.connect(db)
+cur = con.execute("PRAGMA table_info(items)")
+print([c[1] for c in cur.fetchall()])  # column names
+PY

@@ -1,0 +1,3 @@
+body.bg-body { background: #e7c09b; }
+.card { border: 1px solid rgba(18,52,59,.12); border-radius: 1rem; }
+.card-header { font-weight: 600; }
